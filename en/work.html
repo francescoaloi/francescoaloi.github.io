@@ -22,23 +22,26 @@
       <a href="work.html" aria-current="true" lang="en">EN</a>
     </nav>
   </header>
-  <section class="showreel">
-    <p class="kicker">Showreel</p>
+  <section class="film">
     <div class="frame">
       <iframe src="https://www.youtube.com/embed/T7Sy6mtHRzk" title="Francesco Aloi showreel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </section>
-  <section class="picker">
-    <p class="kicker" id="picker-count"></p>
-    <h1 class="picker-title" id="picker-title"></h1>
-    <p class="role" id="picker-role"></p>
-    <div class="links" id="picker-links"></div>
-    <p class="picker-move">
-      <button type="button" id="picker-prev">prev</button>
-      <span>/</span>
-      <button type="button" id="picker-next">next</button>
-    </p>
-    <ol class="picker-list" id="picker-list"></ol>
+  <section class="board">
+    <ol class="titles" id="picker-list"></ol>
+    <div class="now">
+      <h1 id="picker-title"></h1>
+      <p class="role" id="picker-role"></p>
+      <div class="links" id="picker-links"></div>
+      <div class="pager">
+        <p class="move">
+          <button type="button" id="picker-prev">prev</button>
+          <span>/</span>
+          <button type="button" id="picker-next">next</button>
+        </p>
+        <p class="nums" id="picker-nums"></p>
+      </div>
+    </div>
   </section>
   <script>
     window.WORKS = [

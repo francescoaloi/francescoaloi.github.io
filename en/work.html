@@ -73,5 +73,15 @@
       </li>
     </ul>
   </main>
+  <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
+  <script>
+    (() => {
+      const button = document.querySelector('.back-to-top');
+      const updateVisibility = () => button.classList.toggle('is-visible', window.scrollY > 300);
+      window.addEventListener('scroll', updateVisibility, { passive: true });
+      updateVisibility();
+      button.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    })();
+  </script>
 </body>
 </html>

@@ -289,20 +289,21 @@ h1 {
 }
 
 
-/* Back-to-top control on the Projects / Work pages */
+/* Back-to-top control on the Projects pages */
 .back-to-top {
   position: fixed;
   right: 1.5rem;
   bottom: 1.5rem;
-  z-index: 100;
+  z-index: 1000;
   display: grid;
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
-  border: 1px solid var(--line);
+  padding: 0;
+  border: 1px solid currentColor;
   border-radius: 50%;
-  background: #090909;
-  color: #fff;
+  background: var(--bg, #111);
+  color: var(--fg, #fff);
   font: inherit;
   font-size: 1.5rem;
   line-height: 1;
@@ -310,12 +311,16 @@ h1 {
   opacity: 0;
   visibility: hidden;
   transform: translateY(0.5rem);
-  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease, background-color 180ms ease;
 }
 .back-to-top.is-visible {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--fg, #fff);
+  color: var(--bg, #111);
 }
 .back-to-top:focus-visible {
   outline: 2px solid currentColor;

@@ -1,4 +1,4 @@
-# Francesco Aloi
+# Francesco Angelo Aloi
 
 Personal site for GitHub Pages: https://francescoaloi.github.io
 

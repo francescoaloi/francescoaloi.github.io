@@ -129,6 +129,23 @@
     })();
 
     (() => {
+      const items = document.querySelectorAll('.work > li');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!('IntersectionObserver' in window) || reduce) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      items.forEach((item) => {
+        item.classList.add('reveal');
+        observer.observe(item);
+      });
+    })();
+
+    (() => {
       const button = document.querySelector('.back-to-top');
       if (!button) return;
       const updateVisibility = () => {
